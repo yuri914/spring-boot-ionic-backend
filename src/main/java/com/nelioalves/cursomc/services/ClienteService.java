@@ -32,8 +32,8 @@ public class ClienteService {
     private EnderecoRepository enderecoRepository;
     
     public Cliente find(Integer id) {
-	Optional<Cliente> categoria = clienteRepository.findById(id);
-	return categoria.orElseThrow(() -> new ObjectNotFoundException(
+	Optional<Cliente> cliente = clienteRepository.findById(id);
+	return cliente.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
     }
     
